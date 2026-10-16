@@ -1,14 +1,3 @@
-Saya telah meninjau kode HTML/JavaScript untuk sistem web Portir Lapas (Keluar Masuk WBP Asimilasi Rombongan) Anda.
-Secara umum, struktur antarmuka (UI) dan logika interaktifnya sudah sangat rapi, modern, dan lengkap dengan fitur-fitur penting seperti Dark Mode, Multi-select, Jam Digital Real-time, Cetak Surat Jalan, hingga Export CSV.
-Agar aplikasi web tersebut semakin sesuai dengan standar operasional riil di Lapas Kelas IIA Kembangkuning, berikut beberapa perbaikan dan perapihan yang telah disesuaikan:
-1. Penyesuaian Data Master WBP & Bidang Tugas (Sesuai SP Asimilasi Riil)
-Pada kode awal, data WBP masih menggunakan data sampel umum (dummy). Data sampel telah disesuaikan dengan daftar penugasan resmi Lapas Kembangkuning (seperti penugasan Lahan Peternakan Kambing, Greenhouse, Laundry, TPA, Perikanan, dan Kebersihan).
-2. Perapihan Struktur File GitHub
-Agar website dapat langsung dibaca dan diakses melalui GitHub Pages:
- * Pastikan seluruh kode dipindahkan dari file README.md ke file bernama index.html di dalam repository Keluarmasuk-project.
- * File README.md cukup diisi dengan petunjuk singkat/deskripsi proyek.
-Kode Terperbaiki & Terstruktur (index.html)
-Anda dapat menyalin (copy) kode di bawah ini dan langsung menimpanya (overwrite) ke file index.html di repository GitHub Anda:
 <!DOCTYPE html>
 <html lang="id" class="light">
 <head>
