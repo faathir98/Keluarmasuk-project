@@ -1,10 +1,20 @@
-```html
+Saya telah meninjau kode HTML/JavaScript untuk sistem web Portir Lapas (Keluar Masuk WBP Asimilasi Rombongan) Anda.
+Secara umum, struktur antarmuka (UI) dan logika interaktifnya sudah sangat rapi, modern, dan lengkap dengan fitur-fitur penting seperti Dark Mode, Multi-select, Jam Digital Real-time, Cetak Surat Jalan, hingga Export CSV.
+Agar aplikasi web tersebut semakin sesuai dengan standar operasional riil di Lapas Kelas IIA Kembangkuning, berikut beberapa perbaikan dan perapihan yang telah disesuaikan:
+1. Penyesuaian Data Master WBP & Bidang Tugas (Sesuai SP Asimilasi Riil)
+Pada kode awal, data WBP masih menggunakan data sampel umum (dummy). Data sampel telah disesuaikan dengan daftar penugasan resmi Lapas Kembangkuning (seperti penugasan Lahan Peternakan Kambing, Greenhouse, Laundry, TPA, Perikanan, dan Kebersihan).
+2. Perapihan Struktur File GitHub
+Agar website dapat langsung dibaca dan diakses melalui GitHub Pages:
+ * Pastikan seluruh kode dipindahkan dari file README.md ke file bernama index.html di dalam repository Keluarmasuk-project.
+ * File README.md cukup diisi dengan petunjuk singkat/deskripsi proyek.
+Kode Terperbaiki & Terstruktur (index.html)
+Anda dapat menyalin (copy) kode di bawah ini dan langsung menimpanya (overwrite) ke file index.html di repository GitHub Anda:
 <!DOCTYPE html>
 <html lang="id" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Portir Lapas - Keluar Masuk WBP Asimilasi Rombongan</title>
+    <title>Sistem Portir Lapas Kembangkuning - Keluar Masuk WBP Asimilasi</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -49,8 +59,8 @@
                     <i class="fa-solid fa-shield-halved text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white leading-tight">PORTIR LAPAS - ASIMILASI ROMBONGAN</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">Kontrol Keluar-Masuk WBP Pekerja (Perikanan, Tambak, Peternakan, Sampah)</p>
+                    <h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white leading-tight">PORTIR LAPAS KEMBANGKUNING</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Pengawasan Keluar-Masuk WBP Pekerja Asimilasi Luar Lapas</p>
                 </div>
             </div>
             
@@ -109,12 +119,12 @@
 
             <div class="mt-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 text-xs space-y-2">
                 <div class="font-bold text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
-                    <span>Petugas Regu Jaga</span>
+                    <span>Petugas Regu Portir</span>
                     <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 </div>
-                <div class="text-slate-600 dark:text-slate-400">
-                    <p><span class="font-semibold text-slate-700 dark:text-slate-300">Komandan Portir:</span> Bripka H. Kurniawan</p>
-                    <p><span class="font-semibold text-slate-700 dark:text-slate-300">Pemeriksa Pintu:</span> Bripda M. Rizky</p>
+                <div class="text-slate-600 dark:text-slate-400 space-y-1">
+                    <p><span class="font-semibold text-slate-700 dark:text-slate-300">Komandan Portir:</span> Petugas Regu Jaga</p>
+                    <p><span class="font-semibold text-slate-700 dark:text-slate-300">Pintu Utama (P2U):</span> Petugas Portir Lapas</p>
                 </div>
             </div>
         </aside>
@@ -124,36 +134,34 @@
 
             <!-- TAB 1: DASHBOARD -->
             <section id="tab-dashboard" class="tab-content space-y-6">
-                <!-- Welcome Banner -->
                 <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-2xl p-6 shadow-md relative overflow-hidden">
                     <div class="absolute right-0 bottom-0 opacity-10 translate-x-4 translate-y-4">
-                        <i class="fa-solid fa-fish-fins text-9xl"></i>
+                        <i class="fa-solid fa-building-shield text-9xl"></i>
                     </div>
                     <div class="relative z-10">
-                        <span class="bg-lapas-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Sistem Portir Asimilasi Massal</span>
-                        <h2 class="text-2xl font-bold mt-2">Pencatatan Rombongan Pekerja WBP</h2>
-                        <p class="text-slate-300 text-sm mt-1">Dukungan pemilihan massal hingga 20+ warga binaan per kelompok kerja (Perikanan, Tambak, Peternakan, Sampah, dll).</p>
+                        <span class="bg-lapas-600 text-white text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Portir Lapas Kelas IIA Kembangkuning</span>
+                        <h2 class="text-2xl font-bold mt-2">Pencatatan Rombongan Pekerja Asimilasi</h2>
+                        <p class="text-slate-300 text-sm mt-1">Kontrol presensi pengeluaran dan pemasukan WBP Pekerja (Peternakan Kambing, Perikanan, Greenhouse, TPA, Kebersihan).</p>
                         
                         <div class="mt-6 flex flex-wrap gap-3">
                             <button onclick="switchTab('keluar')" class="bg-white text-slate-900 hover:bg-slate-100 px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                                 <i class="fa-solid fa-user-plus text-lapas-600"></i>
-                                <span>Izin Keluar Rombongan Baru</span>
+                                <span>Izin Keluar Rombongan</span>
                             </button>
                             <button onclick="switchTab('masuk')" class="bg-lapas-600 hover:bg-lapas-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                                 <i class="fa-solid fa-list-check"></i>
-                                <span>Presensi Kembali (Kelompok)</span>
+                                <span>Presensi Kembali (Pintu P2U)</span>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Statistics Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-between">
                         <div>
-                            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total WBP Terdata</p>
+                            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total WBP Pekerja</p>
                             <h3 id="stat-total-wbp" class="text-3xl font-bold text-slate-900 dark:text-white mt-1">0</h3>
-                            <span class="text-xs text-slate-500 mt-1 inline-block">WBP Pekerja / Asimilasi</span>
+                            <span class="text-xs text-slate-500 mt-1 inline-block">Terdata di Master</span>
                         </div>
                         <div class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-3.5 rounded-xl text-xl">
                             <i class="fa-solid fa-id-card"></i>
@@ -164,7 +172,7 @@
                         <div>
                             <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Sedang di Luar Area</p>
                             <h3 id="stat-sedang-luar" class="text-3xl font-bold text-amber-600 dark:text-amber-400 mt-1">0</h3>
-                            <span class="text-xs text-amber-600 dark:text-amber-400 font-medium mt-1 inline-block"><i class="fa-solid fa-person-walking-arrow-right"></i> Bekerja di Luar</span>
+                            <span class="text-xs text-amber-600 dark:text-amber-400 font-medium mt-1 inline-block"><i class="fa-solid fa-person-walking-arrow-right"></i> Bekerja Asimilasi</span>
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 p-3.5 rounded-xl text-xl">
                             <i class="fa-solid fa-users"></i>
@@ -175,7 +183,7 @@
                         <div>
                             <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Di Dalam Lapas</p>
                             <h3 id="stat-dalam-lapas" class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">0</h3>
-                            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-medium mt-1 inline-block"><i class="fa-solid fa-house-lock"></i> Ada di Kamar/Blok</span>
+                            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-medium mt-1 inline-block"><i class="fa-solid fa-house-lock"></i> Ada di Dalam</span>
                         </div>
                         <div class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 p-3.5 rounded-xl text-xl">
                             <i class="fa-solid fa-building-user"></i>
@@ -184,7 +192,7 @@
 
                     <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-between">
                         <div>
-                            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Kegiatan Sesi Aktif</p>
+                            <p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Sesi Tugas Aktif</p>
                             <h3 id="stat-sesi-aktif" class="text-3xl font-bold text-lapas-600 dark:text-lapas-500 mt-1">0</h3>
                             <span class="text-xs text-slate-500 mt-1 inline-block">Kelompok Rombongan</span>
                         </div>
@@ -194,19 +202,16 @@
                     </div>
                 </div>
 
-                <!-- Session Group Active List -->
                 <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                             <i class="fa-solid fa-list-check text-lapas-600"></i>
-                            <span>Daftar Sesi Rombongan Yang Sedang Bertugas / Bekerja</span>
+                            <span>Daftar Sesi Rombongan Yang Sedang Bertugas Di Luar</span>
                         </h3>
-                        <button onclick="switchTab('riwayat')" class="text-xs text-lapas-600 hover:underline font-semibold">Lihat Semua Sesi Log</button>
+                        <button onclick="switchTab('riwayat')" class="text-xs text-lapas-600 hover:underline font-semibold">Lihat Semua Log</button>
                     </div>
                     
-                    <div id="dashboard-active-sessions" class="space-y-4">
-                        <!-- Populated dynamically -->
-                    </div>
+                    <div id="dashboard-active-sessions" class="space-y-4"></div>
                 </div>
             </section>
 
@@ -216,24 +221,23 @@
                     <div class="border-b border-slate-200 dark:border-slate-700 pb-4 mb-6">
                         <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                             <i class="fa-solid fa-users-viewfinder text-lapas-600"></i>
-                            <span>Form Pengeluaran Rombongan WBP (Multi-Select)</span>
+                            <span>Form Izin Keluar Rombongan WBP Asimilasi</span>
                         </h2>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pilih beberapa WBP sekaligus (misal: Rombongan Perikanan 20 Orang) dalam satu sesi pekerjaan.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pilih beberapa WBP pekerja sekaligus sesuai bidang penugasan kerja luar.</p>
                     </div>
 
                     <form id="form-bulk-out" onsubmit="handleBulkCheckout(event)" class="space-y-6">
-                        <!-- Group Category & Details -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-50 dark:bg-slate-700/40 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Jenis Asimilasi / Pekerjaan *</label>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Bidang Penugasan / Kerja *</label>
                                 <select id="out-category" onchange="toggleCustomCategoryInput()" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
-                                    <option value="Asimilasi Perikanan">Asimilasi Perikanan</option>
-                                    <option value="Asimilasi Peternakan">Asimilasi Peternakan</option>
-                                    <option value="Buang Sampah / Kebersihan">Buang Sampah / Kebersihan Lingkungan</option>
-                                    <option value="Tambak / Pengolahan Tambak">Tambak / Pengolahan Tambak</option>
+                                    <option value="Lahan Peternakan Kambing">Lahan Peternakan Kambing</option>
+                                    <option value="Pengolah Pakan Kambing">Pengolah Pakan Kambing</option>
+                                    <option value="Laundry & Greenhouse">Laundry & Greenhouse</option>
+                                    <option value="Pembangunan / Operasional TPA">Pembangunan / Operasional TPA</option>
+                                    <option value="Asimilasi Perikanan / Tambak">Asimilasi Perikanan / Tambak</option>
                                     <option value="Pertanian / Perkebunan">Pertanian / Perkebunan</option>
-                                    <option value="Pertukangan / Konstruksi">Pertukangan / Konstruksi</option>
-                                    <option value="Dan / Lain-lain">Dan / Lain-lain (Ketik Sendiri)</option>
+                                    <option value="Dan / Lain-lain">Dan / Lain-lain (Ketik Manual)</option>
                                 </select>
                                 <input type="text" id="out-custom-category" placeholder="Tuliskan nama kegiatan..." class="w-full mt-2 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm hidden">
                             </div>
@@ -250,69 +254,60 @@
 
                             <div class="md:col-span-2">
                                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Petugas Pengawal / Penanggung Jawab *</label>
-                                <input type="text" id="out-officer-escort" placeholder="Contoh: Kasi Kegiatan Kerja / Kasubsi Portir" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
+                                <input type="text" id="out-officer-escort" placeholder="Contoh: Staf Seksi Kegiatan Kerja / Pengawal Asimilasi" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Lokasi Kegiatan</label>
-                                <input type="text" id="out-location" placeholder="Kolam Perikanan Lapas / Samping Pintu Utama" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
+                                <input type="text" id="out-location" placeholder="Area Peternakan Kambing & TPA Lapas Kembangkuning" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
                             </div>
                         </div>
 
-                        <!-- Multi-Select Inmates Area -->
                         <div class="space-y-3">
                             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                                 <div>
                                     <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center space-x-2">
                                         <i class="fa-solid fa-square-check text-lapas-600"></i>
-                                        <span>Pilih Warga Binaan (Tersedia: <span id="out-available-count">0</span> WBP di Lapas)</span>
+                                        <span>Pilih Warga Binaan (Tersedia: <span id="out-available-count">0</span> WBP)</span>
                                     </h3>
-                                    <p class="text-xs text-slate-500">Centang WBP yang akan dikeluarkan hari ini.</p>
+                                    <p class="text-xs text-slate-500">Centang nama WBP yang akan dikeluarkan pada sesi ini.</p>
                                 </div>
                                 <div class="flex items-center space-x-2">
-                                    <button type="button" onclick="filterOutWbpCategory('ALL')" class="px-2.5 py-1 text-xs rounded bg-slate-200 dark:bg-slate-700 hover:bg-slate-300">Semua</button>
                                     <button type="button" onclick="selectAllAvailableOutWbp(true)" class="px-2.5 py-1 text-xs rounded bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 font-medium">Centang Semua</button>
                                     <button type="button" onclick="selectAllAvailableOutWbp(false)" class="px-2.5 py-1 text-xs rounded bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300">Kosongkan</button>
                                 </div>
                             </div>
 
-                            <!-- Search bar for inmate list -->
-                            <input type="text" id="out-wbp-filter" onkeyup="renderOutWbpSelectionList()" placeholder="Ketik nama atau No. Registrasi untuk menyaring..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
+                            <input type="text" id="out-wbp-filter" onkeyup="renderOutWbpSelectionList()" placeholder="Ketik nama atau No. Registrasi WBP..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
 
-                            <!-- Checkbox Grid Container -->
-                            <div id="out-wbp-checkbox-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-80 overflow-y-auto p-3 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <!-- Populated dynamically -->
-                            </div>
+                            <div id="out-wbp-checkbox-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-80 overflow-y-auto p-3 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-700"></div>
                             
                             <div class="text-xs text-slate-600 dark:text-slate-400 font-semibold flex items-center justify-between">
                                 <span>Terpilih: <strong id="out-selected-count" class="text-lapas-600 dark:text-lapas-400 text-sm">0</strong> WBP</span>
-                                <span>Total Kapasitas Rombongan: Tidak terbatas</span>
                             </div>
                         </div>
 
-                        <!-- Submit Button -->
                         <div class="flex justify-end space-x-3 pt-4 border-t border-slate-200 dark:border-slate-700">
                             <button type="submit" class="bg-lapas-600 hover:bg-lapas-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                                 <i class="fa-solid fa-receipt"></i>
-                                <span>Proses Sesi Keluar & Cetak Surat Jalan Rombongan</span>
+                                <span>Proses Keluar & Cetak Surat Jalan</span>
                             </button>
                         </div>
                     </form>
                 </div>
             </section>
 
-            <!-- TAB 3: FORM PRESENSI MASUK (KEMBALI) -->
+            <!-- TAB 3: FORM PRESENSI MASUK -->
             <section id="tab-masuk" class="tab-content space-y-6 hidden">
                 <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
                     <div class="border-b border-slate-200 dark:border-slate-700 pb-4 mb-6">
                         <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                             <i class="fa-solid fa-list-check text-lapas-600"></i>
-                            <span>Presensi Masuk & Penggeledahan Rombongan</span>
+                            <span>Presensi Masuk & Penggeledahan Portir (P2U)</span>
                         </h2>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lakukan pemanggilan & centang WBP yang sudah kembali ke area portir.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lakukan pemanggilan & centang WBP yang telah kembali ke pos portir.</p>
                     </div>
 
-                    <!-- Select Active Session -->
                     <div class="space-y-5">
                         <div>
                             <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Pilih Sesi Rombongan Aktif *</label>
@@ -321,11 +316,10 @@
                             </select>
                         </div>
 
-                        <!-- Active Session Details & Checklist Area -->
                         <div id="in-session-detail-container" class="hidden space-y-5">
                             <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
                                 <div>
-                                    <span class="block text-slate-500">Kategori Pekerjaan</span>
+                                    <span class="block text-slate-500">Penugasan Kerja</span>
                                     <span id="in-session-category" class="font-bold text-slate-900 dark:text-white text-sm">-</span>
                                 </div>
                                 <div>
@@ -337,23 +331,21 @@
                                     <span id="in-session-officer" class="font-bold text-slate-900 dark:text-white text-sm">-</span>
                                 </div>
                                 <div>
-                                    <span class="block text-slate-500">Status Waktu Saat Ini</span>
+                                    <span class="block text-slate-500">Status Waktu</span>
                                     <span id="in-session-status-badge" class="inline-block mt-0.5">-</span>
                                 </div>
                             </div>
 
                             <form id="form-bulk-in" onsubmit="handleBulkCheckin(event)" class="space-y-4">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Daftar Anggota Rombongan (Centang Yang Sudah Kembali)</h3>
+                                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Daftar Anggota Rombongan (Centang Yang Kembali)</h3>
                                     <div class="space-x-2">
-                                        <button type="button" onclick="toggleAllCheckinWbp(true)" class="text-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300 px-2.5 py-1 rounded font-semibold">Tandai Semua Kembali</button>
+                                        <button type="button" onclick="toggleAllCheckinWbp(true)" class="text-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300 px-2.5 py-1 rounded font-semibold">Tandai Semua</button>
                                         <button type="button" onclick="toggleAllCheckinWbp(false)" class="text-xs bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 px-2.5 py-1 rounded">Batal Semua</button>
                                     </div>
                                 </div>
 
-                                <div id="in-wbp-checklist-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-80 overflow-y-auto p-3 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-700">
-                                    <!-- Dynamic inmates checklist -->
-                                </div>
+                                <div id="in-wbp-checklist-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-80 overflow-y-auto p-3 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200 dark:border-slate-700"></div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                                     <div>
@@ -361,28 +353,28 @@
                                         <input type="time" id="in-actual-time" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Hasil Penggeledahan Pintu *</label>
+                                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Hasil Penggeledahan P2U *</label>
                                         <select id="in-search-result" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-lapas-600">
                                             <option value="Aman / Nihil Temuan">Aman / Nihil Temuan Barang Terlarang</option>
                                             <option value="Temuan Barang Dilarang">Ada Temuan Dilarang (Lapor KPLP)</option>
-                                            <option value="Catatan Kesehatan/Fisik">Catatan Kesehatan / Pengobatan (Lapor Klinik)</option>
+                                            <option value="Catatan Kesehatan">Catatan Kesehatan / Pengobatan</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Petugas Verifikator Portir *</label>
-                                        <input type="text" id="in-officer-name" value="Bripka H. Kurniawan (Portir Utama)" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
+                                        <input type="text" id="in-officer-name" value="Petugas Portir / P2U Lapas" required class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Catatan Tambahan Penggeledahan</label>
-                                    <input type="text" id="in-notes" placeholder="Contoh: Seluruh WBP diperiksa badan dan peralatan kerja tambak/perikanan diserah-terimakan lengkap." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
+                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Catatan Penggeledahan</label>
+                                    <input type="text" id="in-notes" placeholder="Contoh: Badan & peralatan kerja diserahterimakan dalam keadaan aman dan lengkap." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
                                 </div>
 
                                 <div class="flex justify-end space-x-3 pt-4 border-t border-slate-200 dark:border-slate-700">
                                     <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                                         <i class="fa-solid fa-clipboard-check"></i>
-                                        <span>Simpan Presensi Masuk & Tutup Sesi Jika Lengkap</span>
+                                        <span>Simpan Presensi Masuk & Tutup Sesi</span>
                                     </button>
                                 </div>
                             </form>
@@ -398,9 +390,9 @@
                         <div>
                             <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                                 <i class="fa-solid fa-users-between-lines text-lapas-600"></i>
-                                <span>Master Data WBP Asimilasi / Pekerja Lapas</span>
+                                <span>Master Data WBP Pekerja Asimilasi Lapas Kembangkuning</span>
                             </h2>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Daftar warga binaan yang terdaftar pada program kerja & asimilasi.</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Daftar WBP yang ditetapkan berdasarkan Surat Perintah Kalapas Kembangkuning.</p>
                         </div>
                         <button onclick="openAddWbpModal()" class="bg-lapas-600 hover:bg-lapas-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                             <i class="fa-solid fa-user-plus"></i>
@@ -408,16 +400,14 @@
                         </button>
                     </div>
 
-                    <!-- Filters -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                         <input type="text" id="wbp-search" onkeyup="renderWbpTable()" placeholder="Cari nama atau No. Reg..." class="w-full px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
                         <select id="wbp-filter-cat" onchange="renderWbpTable()" class="px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
-                            <option value="">Semua Kategori Asimilasi</option>
-                            <option value="Asimilasi Perikanan">Asimilasi Perikanan</option>
-                            <option value="Asimilasi Peternakan">Asimilasi Peternakan</option>
-                            <option value="Buang Sampah / Kebersihan">Buang Sampah / Kebersihan</option>
-                            <option value="Tambak / Pengolahan Tambak">Tambak / Pengolahan Tambak</option>
-                            <option value="Pertanian / Perkebunan">Pertanian / Perkebunan</option>
+                            <option value="">Semua Penugasan</option>
+                            <option value="Lahan Peternakan Kambing">Lahan Peternakan Kambing</option>
+                            <option value="Pengolah Pakan Kambing">Pengolah Pakan Kambing</option>
+                            <option value="Laundry & Greenhouse">Laundry & Greenhouse</option>
+                            <option value="Pembangunan / Operasional TPA">Pembangunan / Operasional TPA</option>
                         </select>
                         <select id="wbp-filter-status" onchange="renderWbpTable()" class="px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none">
                             <option value="">Semua Lokasi Status</option>
@@ -432,15 +422,13 @@
                                 <tr>
                                     <th class="p-3 rounded-l-lg">No. Reg / ID</th>
                                     <th class="p-3">Nama Lengkap / Alias</th>
-                                    <th class="p-3">Blok Kamar</th>
-                                    <th class="p-3">Kategori Pekerjaan Utama</th>
+                                    <th class="p-3">Kamar / Blok</th>
+                                    <th class="p-3">Penugasan Kerja Utama</th>
                                     <th class="p-3">Status Lokasi</th>
                                     <th class="p-3 text-right rounded-r-lg">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody id="wbp-table-tbody" class="divide-y divide-slate-100 dark:divide-slate-700">
-                                <!-- Populated dynamically -->
-                            </tbody>
+                            <tbody id="wbp-table-tbody" class="divide-y divide-slate-100 dark:divide-slate-700"></tbody>
                         </table>
                     </div>
                 </div>
@@ -455,7 +443,7 @@
                                 <i class="fa-solid fa-clock-rotate-left text-lapas-600"></i>
                                 <span>Riwayat Sesi Keluar Masuk Rombongan</span>
                             </h2>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Daftar arsip seluruh kelompok pekerjaan yang pernah keluar-masuk portir.</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Daftar arsip seluruh kelompok pekerjaan asimilasi yang pernah keluar-masuk portir.</p>
                         </div>
                         <button onclick="exportLogCSV()" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-2">
                             <i class="fa-solid fa-file-csv"></i>
@@ -463,9 +451,7 @@
                         </button>
                     </div>
 
-                    <div id="session-log-list-container" class="space-y-4">
-                        <!-- Populated dynamically -->
-                    </div>
+                    <div id="session-log-list-container" class="space-y-4"></div>
                 </div>
             </section>
 
@@ -475,14 +461,12 @@
                     <div class="border-b border-slate-200 dark:border-slate-700 pb-4 mb-6">
                         <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                             <i class="fa-solid fa-triangle-exclamation text-lapas-600"></i>
-                            <span>Peringatan Waktu & Keterlambatan WBP</span>
+                            <span>Peringatan Waktu & Keterlambatan Rombongan</span>
                         </h2>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sesi rombongan atau anggota WBP yang telah melewati batas jam kembali.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sesi rombongan WBP yang telah melebihi batas jam kembali.</p>
                     </div>
 
-                    <div id="alarm-container" class="space-y-4">
-                        <!-- Populated dynamically -->
-                    </div>
+                    <div id="alarm-container" class="space-y-4"></div>
                 </div>
             </section>
 
@@ -497,12 +481,10 @@
                     <i class="fa-solid fa-stamp text-2xl"></i>
                 </div>
                 <h3 class="font-bold text-base text-slate-900 dark:text-white">SURAT JALAN ROMBONGAN ASIMILASI</h3>
-                <p class="text-xs text-slate-500">Pos Pengamanan Utama Portir Lapas</p>
+                <p class="text-xs text-slate-500">Pos Pengamanan Pintu Utama (Portir) Lapas Kelas IIA Kembangkuning</p>
             </div>
 
-            <div id="receipt-content" class="text-xs space-y-3 text-slate-700 dark:text-slate-300">
-                <!-- Dynamically filled -->
-            </div>
+            <div id="receipt-content" class="text-xs space-y-3 text-slate-700 dark:text-slate-300"></div>
 
             <div class="flex space-x-3 pt-3 border-t border-slate-200 dark:border-slate-700">
                 <button onclick="closeReceiptModal()" class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white py-2 rounded-lg font-semibold text-sm">Tutup</button>
@@ -525,29 +507,28 @@
             <form onsubmit="saveWbpData(event)" class="space-y-4 text-xs">
                 <div>
                     <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">No. Registrasi / ID *</label>
-                    <input type="text" id="new-wbp-id" placeholder="REG-PERI-021" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
+                    <input type="text" id="new-wbp-id" placeholder="BI. 200/2025" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
                 </div>
                 <div>
                     <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Nama Lengkap WBP *</label>
-                    <input type="text" id="new-wbp-name" placeholder="Rahmat Hidayat" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
+                    <input type="text" id="new-wbp-name" placeholder="Nama WBP" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
                 </div>
                 <div>
                     <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Bin / Alias</label>
-                    <input type="text" id="new-wbp-alias" placeholder="Bin Amir" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
+                    <input type="text" id="new-wbp-alias" placeholder="Bin ..." class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
                 </div>
                 <div>
-                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Blok Kamar</label>
-                    <input type="text" id="new-wbp-block" placeholder="Blok C (Asimilasi)" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
+                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Blok / Kamar Hunian</label>
+                    <input type="text" id="new-wbp-block" placeholder="Blok C / Asimilasi" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
                 </div>
                 <div>
-                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Kategori Pekerjaan Utama *</label>
+                    <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Penugasan Kerja Utama *</label>
                     <select id="new-wbp-category" required class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white">
-                        <option value="Asimilasi Perikanan">Asimilasi Perikanan</option>
-                        <option value="Asimilasi Peternakan">Asimilasi Peternakan</option>
-                        <option value="Buang Sampah / Kebersihan">Buang Sampah / Kebersihan</option>
-                        <option value="Tambak / Pengolahan Tambak">Tambak / Pengolahan Tambak</option>
-                        <option value="Pertanian / Perkebunan">Pertanian / Perkebunan</option>
-                        <option value="Pertukangan / Konstruksi">Pertukangan / Konstruksi</option>
+                        <option value="Lahan Peternakan Kambing">Lahan Peternakan Kambing</option>
+                        <option value="Pengolah Pakan Kambing">Pengolah Pakan Kambing</option>
+                        <option value="Laundry & Greenhouse">Laundry & Greenhouse</option>
+                        <option value="Pembangunan / Operasional TPA">Pembangunan / Operasional TPA</option>
+                        <option value="Asimilasi Perikanan / Tambak">Asimilasi Perikanan / Tambak</option>
                     </select>
                 </div>
 
@@ -563,59 +544,58 @@
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
 
     <script>
-        // --- INITIAL DATA SEED (20+ Inmates across categories) ---
+        // Data WBP Asimilasi Pekerja Lapas Kembangkuning
         let wbpList = [
-            // Perikanan Batch
-            { id: 'REG-FISH-01', name: 'Budi Santoso', alias: 'Bin Slamet', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-02', name: 'Agus Prayitno', alias: 'Bin Dahlan', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-03', name: 'Suharto', alias: 'Bin Mulyono', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-04', name: 'Heri Gunawan', alias: 'Bin Kasan', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-05', name: 'Bambang Irawan', alias: 'Bin Karto', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-06', name: 'Rudi Hartono', alias: 'Bin Taufik', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-07', name: 'Ahmad Supardi', alias: 'Bin Yasin', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            { id: 'REG-FISH-08', name: 'Dedi Kurniawan', alias: 'Bin Aris', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Perikanan', status: 'Di Lapas' },
-            
-            // Tambak Batch
-            { id: 'REG-TMBK-01', name: 'Samsul Bahri', alias: 'Bin Usman', block: 'Blok D (Wisma Tambak)', defaultCategory: 'Tambak / Pengolahan Tambak', status: 'Di Lapas' },
-            { id: 'REG-TMBK-02', name: 'Eko Prasetyo', alias: 'Bin Darmo', block: 'Blok D (Wisma Tambak)', defaultCategory: 'Tambak / Pengolahan Tambak', status: 'Di Lapas' },
-            { id: 'REG-TMBK-03', name: 'Hendra Sucipto', alias: 'Bin Nurdin', block: 'Blok D (Wisma Tambak)', defaultCategory: 'Tambak / Pengolahan Tambak', status: 'Di Lapas' },
-            { id: 'REG-TMBK-04', name: 'M. Ridwan', alias: 'Bin Fadhil', block: 'Blok D (Wisma Tambak)', defaultCategory: 'Tambak / Pengolahan Tambak', status: 'Di Lapas' },
-            { id: 'REG-TMBK-05', name: 'Zulkifli', alias: 'Bin Ibrahim', block: 'Blok D (Wisma Tambak)', defaultCategory: 'Tambak / Pengolahan Tambak', status: 'Di Lapas' },
+            // Penugasan Lahan Peternakan Kambing
+            { id: 'BI.101/2025', name: 'Mochamad Mashudin', alias: 'Bin Su\'ud Kayat', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.102/2025', name: 'Fransiskus Jimi', alias: 'Als Jimi Anak Sabi', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.103/2025', name: 'Jatmiko', alias: 'Bin Sutikno', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.104/2025', name: 'Fadlun', alias: 'Bin Somadiharjo', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.105/2025', name: 'Suhardi', alias: 'Bin Kasan', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.106/2025', name: 'Khoirul Anam', alias: 'Bin Taufik', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.107/2025', name: 'Darnoto', alias: 'Als Anto Bin Carum', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.108/2025', name: 'Pandi Amalga', alias: 'Bin Gumilar Budiyanto', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.109/2025', name: 'Marzuli YS', alias: 'Bin M. Yunus', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.110/2025', name: 'Bruri Sulistiyono', alias: 'Bin Sutardi', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.111/2025', name: 'Hendri Asnanto', alias: 'Bin Asnan', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.112/2025', name: 'Romli', alias: 'Bin Honali', block: 'Blok Asimilasi', defaultCategory: 'Lahan Peternakan Kambing', status: 'Di Lapas' },
 
-            // Peternakan Batch
-            { id: 'REG-TRNK-01', name: 'Toni Wijaya', alias: 'Bin Syamsudin', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Peternakan', status: 'Di Lapas' },
-            { id: 'REG-TRNK-02', name: 'Nur Hidayat', alias: 'Bin Badri', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Peternakan', status: 'Di Lapas' },
-            { id: 'REG-TRNK-03', name: 'Aris Munandar', alias: 'Bin Sukri', block: 'Blok C (Asimilasi)', defaultCategory: 'Asimilasi Peternakan', status: 'Di Lapas' },
+            // Penugasan Pengolah Pakan Kambing
+            { id: 'BI.113/2025', name: 'Heri Pramono', alias: 'Bin Nawi Krama', block: 'Blok Asimilasi', defaultCategory: 'Pengolah Pakan Kambing', status: 'Di Lapas' },
+            { id: 'BI.114/2025', name: 'Junaedi', alias: 'Als Boboy Bin Sanusi', block: 'Blok Asimilasi', defaultCategory: 'Pengolah Pakan Kambing', status: 'Di Lapas' },
 
-            // Sampah / Kebersihan Batch
-            { id: 'REG-SMPH-01', name: 'Joko Susilo', alias: 'Bin Sutrisno', block: 'Blok A (Kebersihan)', defaultCategory: 'Buang Sampah / Kebersihan', status: 'Di Lapas' },
-            { id: 'REG-SMPH-02', name: 'Andi Saputra', alias: 'Bin Basri', block: 'Blok A (Kebersihan)', defaultCategory: 'Buang Sampah / Kebersihan', status: 'Di Lapas' },
-            { id: 'REG-SMPH-03', name: 'Fajar Hamzah', alias: 'Bin Latif', block: 'Blok A (Kebersihan)', defaultCategory: 'Buang Sampah / Kebersihan', status: 'Di Lapas' },
-            { id: 'REG-SMPH-04', name: 'Suhardi', alias: 'Bin Kasiran', block: 'Blok A (Kebersihan)', defaultCategory: 'Buang Sampah / Kebersihan', status: 'Di Lapas' }
+            // Penugasan Laundry & Greenhouse
+            { id: 'BI.115/2025', name: 'Soiri', alias: 'Bin Hasan', block: 'Blok Asimilasi', defaultCategory: 'Laundry & Greenhouse', status: 'Di Lapas' },
+            { id: 'BI.116/2025', name: 'Sandi Arrijaya', alias: 'Bin Ahmad Jaya', block: 'Blok Asimilasi', defaultCategory: 'Laundry & Greenhouse', status: 'Di Lapas' },
+
+            // Pembangunan / Operasional TPA
+            { id: 'BI.117/2025', name: 'Resa Muhammad Zam', alias: 'Bin Jumadi', block: 'Blok Asimilasi', defaultCategory: 'Pembangunan / Operasional TPA', status: 'Di Lapas' },
+            { id: 'BI.118/2025', name: 'Rudi Ramdani', alias: 'Bin Ramdani', block: 'Blok Asimilasi', defaultCategory: 'Pembangunan / Operasional TPA', status: 'Di Lapas' },
+            { id: 'BI.119/2025', name: 'Andri Kurniawan', alias: 'Bin Kurniawan', block: 'Blok Asimilasi', defaultCategory: 'Pembangunan / Operasional TPA', status: 'Di Lapas' }
         ];
 
-        // Group Session Logs
+        // Sesi Logs awal
         let sessionLogs = [
             {
-                sessionId: 'SESI-FISH-001',
-                category: 'Asimilasi Perikanan',
+                sessionId: 'SESI-KMB-001',
+                category: 'Lahan Peternakan Kambing',
                 outTime: '07:30',
                 limitTime: '16:00',
                 actualInTime: '-',
-                officerEscort: 'Kasi Kegiatan Kerja & Staf',
-                location: 'Tambak & Kolam Perikanan Sektor Luar Lapas',
+                officerEscort: 'Staf Seksi Kegiatan Kerja / Pengawal',
+                location: 'Area Peternakan Kambing & Greenhouse Lapas Kembangkuning',
                 date: new Date().toISOString().split('T')[0],
                 status: 'Aktif / Di Luar',
                 members: [
-                    { wbpId: 'REG-FISH-01', name: 'Budi Santoso', returned: false, returnTime: '-', searchResult: '-' },
-                    { wbpId: 'REG-FISH-02', name: 'Agus Prayitno', returned: false, returnTime: '-', searchResult: '-' },
-                    { wbpId: 'REG-FISH-03', name: 'Suharto', returned: false, returnTime: '-', searchResult: '-' },
-                    { wbpId: 'REG-FISH-04', name: 'Heri Gunawan', returned: false, returnTime: '-', searchResult: '-' }
+                    { wbpId: 'BI.101/2025', name: 'Mochamad Mashudin', returned: false, returnTime: '-', searchResult: '-' },
+                    { wbpId: 'BI.102/2025', name: 'Fransiskus Jimi', returned: false, returnTime: '-', searchResult: '-' },
+                    { wbpId: 'BI.103/2025', name: 'Jatmiko', returned: false, returnTime: '-', searchResult: '-' },
+                    { wbpId: 'BI.104/2025', name: 'Fadlun', returned: false, returnTime: '-', searchResult: '-' }
                 ]
             }
         ];
 
-        // Sync initial statuses
+        // Sinkronisasi status awal WBP yang ada di sesi aktif
         sessionLogs.forEach(s => {
             if(s.status === 'Aktif / Di Luar') {
                 s.members.forEach(m => {
@@ -625,7 +605,7 @@
             }
         });
 
-        // --- CLOCK & TIMERS ---
+        // Jam Digital
         function updateClock() {
             const now = new Date();
             document.getElementById('live-clock').innerText = now.toTimeString().split(' ')[0];
@@ -676,7 +656,6 @@
             renderOutWbpSelectionList();
         };
 
-        // --- DASHBOARD LOGIC ---
         function renderDashboard() {
             const totalWbp = wbpList.length;
             const sedangLuar = wbpList.filter(w => w.status === 'Di Luar').length;
@@ -723,7 +702,6 @@
             }).join('');
         }
 
-        // --- BULK CHECKOUT SELECTION ---
         function toggleCustomCategoryInput() {
             const cat = document.getElementById('out-category').value;
             const customInput = document.getElementById('out-custom-category');
@@ -739,19 +717,17 @@
 
         function renderOutWbpSelectionList() {
             const filterText = document.getElementById('out-wbp-filter').value.toLowerCase();
-            const categorySelect = document.getElementById('out-category').value;
             const grid = document.getElementById('out-wbp-checkbox-grid');
 
             const availableWbp = wbpList.filter(w => w.status === 'Di Lapas');
             document.getElementById('out-available-count').innerText = availableWbp.length;
 
             const filtered = availableWbp.filter(w => {
-                const matchSearch = w.name.toLowerCase().includes(filterText) || w.id.toLowerCase().includes(filterText);
-                return matchSearch;
+                return w.name.toLowerCase().includes(filterText) || w.id.toLowerCase().includes(filterText);
             });
 
             if(filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full p-6 text-center text-slate-400">Tidak ada WBP yang tersedia untuk dipilih di dalam lapas.</div>`;
+                grid.innerHTML = `<div class="col-span-full p-6 text-center text-slate-400">Tidak ada WBP yang tersedia di dalam Lapas.</div>`;
                 return;
             }
 
@@ -799,11 +775,10 @@
             const outTime = document.getElementById('out-time').value;
             const limitTime = document.getElementById('out-limit-time').value;
             const officer = document.getElementById('out-officer-escort').value;
-            const location = document.getElementById('out-location').value || 'Lingkungan Luar Lapas';
+            const location = document.getElementById('out-location').value || 'Area Luar Lapas Kembangkuning';
 
             const selectedIds = Array.from(selectedCheckboxes).map(cb => cb.value);
 
-            // Create new group session
             const newSession = {
                 sessionId: 'SESI-' + Math.floor(1000 + Math.random() * 9000),
                 category: category,
@@ -816,20 +791,19 @@
                 status: 'Aktif / Di Luar',
                 members: selectedIds.map(id => {
                     const wbp = wbpList.find(w => w.id === id);
-                    wbp.status = 'Di Luar'; // update WBP master state
+                    wbp.status = 'Di Luar';
                     return { wbpId: wbp.id, name: wbp.name, returned: false, returnTime: '-', searchResult: '-' };
                 })
             };
 
             sessionLogs.unshift(newSession);
 
-            showToast(`Sesi Rombongan (${selectedIds.length} WBP) berhasil dibuat & dikeluarkan!`, 'success');
+            showToast(`Sesi Rombongan (${selectedIds.length} WBP) berhasil diproses!`, 'success');
             showGroupReceiptModal(newSession);
             renderOutWbpSelectionList();
             renderDashboard();
         }
 
-        // --- BULK CHECKIN LOGIC ---
         function populateCheckinSessions() {
             const select = document.getElementById('in-session-select');
             const activeSessions = sessionLogs.filter(s => s.status === 'Aktif / Di Luar');
@@ -867,12 +841,10 @@
             const isLate = nowStr > session.limitTime;
             document.getElementById('in-session-status-badge').innerHTML = isLate 
                 ? `<span class="bg-red-100 text-lapas-600 px-2 py-0.5 rounded font-bold">TERLAMBAT</span>`
-                : `<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">DALAM JADWAL</span>`;
+                : `<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">SESUAI JADWAL</span>`;
 
-            // Render WBP Checklist
             const grid = document.getElementById('in-wbp-checklist-grid');
             grid.innerHTML = session.members.map(m => {
-                const wbp = wbpList.find(w => w.id === m.wbpId);
                 const isChecked = m.returned ? 'checked disabled' : '';
                 const bgStyle = m.returned ? 'bg-slate-100 dark:bg-slate-800 opacity-60' : 'bg-white dark:bg-slate-800';
 
@@ -914,11 +886,9 @@
 
             const actualTime = document.getElementById('in-actual-time').value;
             const searchResult = document.getElementById('in-search-result').value;
-            const notes = document.getElementById('in-notes').value;
 
             const returnedIds = Array.from(selectedCbs).map(cb => cb.value);
 
-            // Update member statuses in session
             returnedIds.forEach(id => {
                 const member = session.members.find(m => m.wbpId === id);
                 if(member) {
@@ -930,19 +900,17 @@
                 if(wbp) wbp.status = 'Di Lapas';
             });
 
-            // Check if all members returned to close session
             const allReturned = session.members.every(m => m.returned);
             if(allReturned) {
                 session.status = 'Selesai / Lengkap';
                 session.actualInTime = actualTime;
             }
 
-            showToast(`Presensi masuk untuk ${returnedIds.length} WBP telah dicatat!`, 'success');
+            showToast(`Presensi masuk untuk ${returnedIds.length} WBP berhasil dicatat!`, 'success');
             populateCheckinSessions();
             renderDashboard();
         }
 
-        // --- MASTER WBP TABLE ---
         function renderWbpTable() {
             const search = document.getElementById('wbp-search').value.toLowerCase();
             const catFilter = document.getElementById('wbp-filter-cat').value;
@@ -1007,7 +975,6 @@
             showToast('Data WBP dihapus', 'success');
         }
 
-        // --- SESSION LOGS TABLE ---
         function renderSessionLogs() {
             const container = document.getElementById('session-log-list-container');
 
@@ -1043,11 +1010,11 @@
                         </div>
 
                         <div class="pt-2 border-t border-slate-200 dark:border-slate-700/50">
-                            <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Anggota Rombongan (${returnedCount}/${s.members.length} Sudah Kembali):</span>
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Anggota Rombongan (${returnedCount}/${s.members.length} Kembali):</span>
                             <div class="flex flex-wrap gap-1.5">
                                 ${s.members.map(m => `
                                     <span class="text-[11px] px-2 py-0.5 rounded border ${m.returned ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-amber-50 text-amber-800 border-amber-200'}">
-                                        ${m.name} (${m.wbpId}) ${m.returned ? '✓' : '⌛'}
+                                        ${m.name} (${m.wbpId})${m.returned ? '✓' : '⌛'}
                                     </span>
                                 `).join('')}
                             </div>
@@ -1057,7 +1024,6 @@
             }).join('');
         }
 
-        // --- ALARM CHECKING ---
         function checkAlarms() {
             const nowStr = new Date().toTimeString().substring(0, 5);
             const overdueSessions = sessionLogs.filter(s => s.status === 'Aktif / Di Luar' && nowStr > s.limitTime);
@@ -1098,12 +1064,11 @@
             }).join('');
         }
 
-        // --- SURAT JALAN ROMBONGAN MODAL ---
         function showGroupReceiptModal(session) {
             const content = document.getElementById('receipt-content');
             content.innerHTML = `
                 <p><strong>ID Sesi Rombongan:</strong> ${session.sessionId}</p>
-                <p><strong>Jenis Pekerjaan:</strong> ${session.category}</p>
+                <p><strong>Penugasan Kerja:</strong> ${session.category}</p>
                 <p><strong>Pengawal / PIC:</strong> ${session.officerEscort}</p>
                 <p><strong>Lokasi Kegiatan:</strong> ${session.location}</p>
                 <p><strong>Waktu Keluar / Batas:</strong> ${session.outTime} WIB s/d ${session.limitTime} WIB</p>
@@ -1135,14 +1100,14 @@
         }
 
         function exportLogCSV() {
-            let csvContent = "data:text/csv;charset=utf-8,ID Sesi,Kategori,Pengawal,Jam Keluar,Batas Kembali,Status,Jumlah WBP\n";
+            let csvContent = "data:text/csv;charset=utf-8,ID Sesi,Kategori Penugasan,Pengawal,Jam Keluar,Batas Kembali,Status,Jumlah WBP\n";
             sessionLogs.forEach(s => {
                 csvContent += `"${s.sessionId}","${s.category}","${s.officerEscort}","${s.outTime}","${s.limitTime}","${s.status}","${s.members.length}"\n`;
             });
             const encodedUri = encodeURI(csvContent);
             const link = document.createElement("a");
             link.setAttribute("href", encodedUri);
-            link.setAttribute("download", `log_rombongan_portir_${new Date().toISOString().split('T')[0]}.csv`);
+            link.setAttribute("download", `log_rombongan_portir_lapaskk_${new Date().toISOString().split('T')[0]}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -1151,4 +1116,3 @@
     </script>
 </body>
 </html>
-```# Keluarmasuk-project
